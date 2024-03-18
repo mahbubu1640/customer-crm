@@ -1,0 +1,31 @@
+{% extends "index.html"%}
+{% load static%}
+
+{%block content%}
+ <p class="h5">Login To Enjoy Facility </p>
+{%if request.user.is_authenticated%}
+
+<h1>Welcome to My Website</h1>
+<p>Hello You are currently Logged in </p>
+
+ <br>
+
+ {%else%}
+ <form>
+  {%csrf_token%}
+  <div class="mb-3">
+    <input type="text" class="form-control" id="" 
+     placeholder="username" name="User_Name" required>
+
+  </div>
+  <div class="mb-3">
+
+    <input type="password" class="form-control" 
+    placeholder="password" name="Password" required>
+  </div>
+
+  <button type="submit" class="btn btn-secondary ">Login</button>
+</form>
+{%endif%}
+
+{%endblock%}
