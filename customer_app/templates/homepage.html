@@ -2,30 +2,35 @@
 {% load static%}
 
 {%block content%}
- <p class="h5">Login To Enjoy Facility </p>
+ 
 {%if request.user.is_authenticated%}
 
 <h1>Welcome to My Website</h1>
 <p>Hello You are currently Logged in </p>
 
  <br>
+  <a href="/logout" class="btn btn-secondary">Logout</a>
 
  {%else%}
- <form>
+ <p class="h5">Login To Enjoy Facility </p>
+ <form method="POST" >
   {%csrf_token%}
   <div class="mb-3">
     <input type="text" class="form-control" id="" 
-     placeholder="username" name="User_Name" required>
+     placeholder="username" name="username" required>
 
   </div>
   <div class="mb-3">
 
     <input type="password" class="form-control" 
-    placeholder="password" name="Password" required>
+    placeholder="password" name="password" required>
   </div>
+  <button type="submit" class="btn btn-primary ">Login</button>
+<br> 
 
-  <button type="submit" class="btn btn-secondary ">Login</button>
 </form>
+<p>If you are not registered yet please register</p>
+  <a href="/register" class="btn btn-primary">Register</a> <br> 
 {%endif%}
 
 {%endblock%}

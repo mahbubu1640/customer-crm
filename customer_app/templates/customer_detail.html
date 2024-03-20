@@ -1,0 +1,24 @@
+{%extends "index.html"%}
+{%block content %}
+ <div>
+  <h4>Full Details And Action for </h4>
+ </div>
+
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{customer.first_name}} {{customer.last_name}}</h5>     
+      <p class="card-text"><b> Created At : </b> {{customer.created_at}}</p>
+      <p class="card-text"><b>Email : </b>{{customer.email}}</p>
+      <p class="card-text"><b>Phone : </b>{{customer.phone}}</p>
+      <p class="card-text"><b>Address : </b>{{customer.address}}</p>
+      <p class="card-text"><b>City : </b>{{customer.city}}</p>
+      <p class="card-text"><b>State : </b> {{customer.state}}</p>
+      <p class="card-text"><b> Zipcode : </b> {{customer.zipcode}}</p>
+      
+      
+      <a href="#" class="btn btn-secondary">Update</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" class="btn btn-danger">Delete</a>
+    </div>
+  </div>
+ <br> <br>
+{%endblock%} 
