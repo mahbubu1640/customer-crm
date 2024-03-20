@@ -8,10 +8,29 @@ from .models import Customer
 
 
 
+def update_view(request,pk):
+    record_instance=Customer.objects.get(pk=pk)
+    if request.method == "POST":
+        form = CustomerForm(request.POST,instance=record_instance)
+        if form.is_valid():
+            form.save()
+            messages.success(request,"Updated Customer Details Successfully")
+            return redirect('retrieve-customer')
+        else:
+            messages.success("Error !Please Enter Correct Customer Detail")
+    else:
+        form = CustomerForm(instance=record_instance)
+        return render(request,"update.html",{'form':form})
 
-def delete_view(request):
-    pass
 
+
+def delete_view(request,pk):
+    customer = Customer.objects.get(pk=pk)
+    customer.delete()
+    messages.success(request,"Deleted Record Successfully")
+    return redirect('retrieve-customer')
+    
+    
 def customer_detail(request,pk):
     customer=Customer.objects.get(pk=pk)
     return render(request,"customer_detail.html",{'customer':customer})    

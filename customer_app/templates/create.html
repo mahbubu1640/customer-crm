@@ -5,7 +5,8 @@
   <form action="" method="POST">
     {%csrf_token%}
     {{form.as_p}}
-    <input type="submit" value="Submit Record of Customer" name="" id=""> <br> <br>
+    <input type="submit" value="Submit Record of Customer" 
+    class="btn btn-primary btn-bg" id=""> <br> <br>
   </form>
   <a href="/retreive" class="btn btn-primary btn-success">See List of Customer</a> <br><br>
 {%endblock%}

@@ -16,8 +16,8 @@
       <p class="card-text"><b> Zipcode : </b> {{customer.zipcode}}</p>
       
       
-      <a href="#" class="btn btn-secondary">Update</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="#" class="btn btn-danger">Delete</a>
+      <a href="{%url 'customer-update' customer.id%}" class="btn btn-secondary">Update</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="{%url 'customer-delete' customer.id%}" class="btn btn-danger">Delete</a>
     </div>
   </div>
  <br> <br>
